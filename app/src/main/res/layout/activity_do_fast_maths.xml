@@ -5,6 +5,11 @@
     android:layout_height="match_parent"
     android:background="#45211A"
     android:orientation="vertical">
+    <!--    android:background="#45211A"-->
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,16 +30,31 @@
                 android:textSize="50sp"
                 android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/score_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="15dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:text="@string/score"
+                android:textColor="#5262F3"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:ignore="RtlSymmetry" />
+
             <HorizontalScrollView
-                android:layout_width="150dp"
-                android:layout_height="wrap_content">
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/score_text">
 
                 <TextView
                     android:id="@+id/score"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="15dp"
-                    android:text="@string/score_0"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:text="0"
                     android:textColor="#5262F3"
                     android:textSize="30sp"
                     android:textStyle="bold" />
@@ -48,7 +68,8 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
                 android:background="@drawable/button_custom"
-                android:text="@string/next" />
+                android:text="@string/next"
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/correct_wrong_answer"
@@ -68,6 +89,33 @@
         </RelativeLayout>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="50dp">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/question"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="#4FE319"
+                    android:textSize="45sp"
+                    android:textStyle="bold|italic" />
+            </ScrollView>
+        </RelativeLayout>
+    </LinearLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -76,33 +124,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_marginBottom="150dp">
-
-                    <ScrollView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/question"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/question"
-                            android:textAlignment="center"
-                            android:textAllCaps="true"
-                            android:textColor="#4FE319"
-                            android:textSize="45sp"
-                            android:textStyle="bold|italic" />
-                    </ScrollView>
-                </RelativeLayout>
-            </LinearLayout>
 
 
             <LinearLayout
@@ -128,6 +149,7 @@
                         android:enabled="true"
                         android:padding="20dp"
                         android:text="@string/option_1"
+                        android:textColor="@color/black"
                         android:textSize="25sp" />
 
                     <androidx.appcompat.widget.AppCompatButton
@@ -145,6 +167,7 @@
                         android:enabled="true"
                         android:padding="20dp"
                         android:text="@string/option_2"
+                        android:textColor="@color/black"
                         android:textSize="25sp" />
 
                     <androidx.appcompat.widget.AppCompatButton
@@ -161,6 +184,7 @@
                         android:enabled="true"
                         android:padding="20dp"
                         android:text="@string/option_3"
+                        android:textColor="@color/black"
                         android:textSize="25sp" />
 
                     <androidx.appcompat.widget.AppCompatButton
@@ -176,6 +200,7 @@
                         android:enabled="true"
                         android:padding="20dp"
                         android:text="@string/option_4"
+                        android:textColor="@color/black"
                         android:textSize="25sp" />
 
                 </RelativeLayout>
